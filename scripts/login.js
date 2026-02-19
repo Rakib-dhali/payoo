@@ -6,14 +6,16 @@ document.getElementById("login-btn").addEventListener("click", function () {
   const inputPin = document.getElementById("pin").value;
   if (inputNumber === number && inputPin === pin) {
     alert("logged in successfully");
-    window.location.replace("/home.html");
+    window.location.replace("./home.html");
   } else {
     if (inputNumber === "" || inputPin == "") {
       alert("number or pin required");
     } else if (inputNumber.length < 11) {
-      alert(`login failed .number must be 11 digit`);
-    } else if (inputPin < 4) {
-      alert("login failed. pin must be 4 digit");
+      alert(`login failed. number must be 11 digits`);
+    } else if (inputPin.length < 4) {
+      alert("login failed. pin must be 4 digits");
+    } else {
+      alert("login failed. incorrect number or pin");
     }
   }
 });
